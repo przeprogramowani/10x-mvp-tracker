@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    // Node.js 22 specific settings
+    "target": "ES2023",
+    "module": "nodenext",
+    "lib": ["ES2023"],
+
+    // Module resolution
+    "moduleResolution": "nodenext",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+
+    // Type checking
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+
+    // Output
+    "outDir": "./dist",
+    "rootDir": "./src",
+
+    // Source maps for debugging
+    "sourceMap": true,
+
+    // Emit helpers
+    "importHelpers": true,
+
+    // Enable experimental features if needed
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
