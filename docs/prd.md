@@ -24,20 +24,20 @@ Narzędzie rozwiązuje te problemy poprzez automatyczną analizę projektu i gen
 - Pojedynczy tool MCP "check-mvp" wykonujący kompleksową analizę projektu
 - Automatyczne wykrywanie typu projektu (wsparcie tylko dla Astro w pierwszej fazie)
 - Sprawdzanie 10 kryteriów oceny z wynikiem TAK/NIE i opisem:
-    - Dokumentacja projektu (README + PRD)
-    - Implementacja funkcji logowania
-    - Obecność testów
-    - Zaimplementowana logika biznesowa
-    - Konfiguracja CI/CD
+  - Dokumentacja projektu (README + PRD)
+  - Implementacja funkcji logowania
+  - Obecność testów
+  - Zaimplementowana logika biznesowa
+  - Konfiguracja CI/CD
 
 ### 3.2 Raportowanie
 
 - Generowanie raportu w formacie Markdown zawierającego:
-    - Checklistę z emoji (✅/❌) dla każdego kryterium
-    - Procent ukończenia projektu
-    - Krótkie wskazówki dla niespełnionych kryteriów
-    - Sekcję do skopiowania do formularza zaliczeniowego
-    - Informację o przybliżonym zużyciu tokenów
+  - Checklistę z emoji (✅/❌) dla każdego kryterium
+  - Procent ukończenia projektu
+  - Krótkie wskazówki dla niespełnionych kryteriów
+  - Sekcję do skopiowania do formularza zaliczeniowego
+  - Informację o przybliżonym zużyciu tokenów
 
 ### 3.3 Persystencja
 
@@ -86,11 +86,11 @@ Narzędzie rozwiązuje te problemy poprzez automatyczną analizę projektu i gen
 - Tytuł: Jako kursant chcę sprawdzić stan mojego projektu MVP
 - Opis: Kursant wykonuje komendę check-mvp w katalogu projektu, aby otrzymać aktualny stan spełnienia kryteriów zaliczeniowych
 - Kryteria akceptacji:
-    - Komenda check-mvp jest dostępna w terminalu po zainstalowaniu pakietu
-    - Narzędzie automatycznie wykrywa czy projekt jest oparty na Astro
-    - Wyświetla się raport z oceną wszystkich 6 kryteriów
-    - Każde kryterium ma status TAK/NIE z emoji (✅/❌)
-    - Raport zawiera procent ukończenia projektu
+  - Komenda check-mvp jest dostępna w terminalu po zainstalowaniu pakietu
+  - Narzędzie automatycznie wykrywa czy projekt jest oparty na Astro
+  - Wyświetla się raport z oceną wszystkich 6 kryteriów
+  - Każde kryterium ma status TAK/NIE z emoji (✅/❌)
+  - Raport zawiera procent ukończenia projektu
 
 ### US-002: Otrzymanie wskazówek do poprawy
 
@@ -98,10 +98,10 @@ Narzędzie rozwiązuje te problemy poprzez automatyczną analizę projektu i gen
 - Tytuł: Jako kursant chcę wiedzieć co poprawić w pierwszej kolejności
 - Opis: Po sprawdzeniu projektu, kursant otrzymuje konkretne wskazówki dla każdego niespełnionego kryterium
 - Kryteria akceptacji:
-    - Dla każdego kryterium z wynikiem NIE wyświetla się krótka wskazówka
-    - Wskazówki są priorytetyzowane (Critical/Important/Optional)
-    - Wskazówki są konkretne i możliwe do zastosowania
-    - Język wskazówek jest casualowy i przyjazny
+  - Dla każdego kryterium z wynikiem NIE wyświetla się krótka wskazówka
+  - Wskazówki są priorytetyzowane (Critical/Important/Optional)
+  - Wskazówki są konkretne i możliwe do zastosowania
+  - Język wskazówek jest casualowy i przyjazny
 
 ### US-003: Obsługa projektów nie-Astro
 
@@ -109,10 +109,10 @@ Narzędzie rozwiązuje te problemy poprzez automatyczną analizę projektu i gen
 - Tytuł: Jako kursant z projektem w innej technologii chcę otrzymać jasną informację
 - Opis: Gdy kursant próbuje użyć narzędzia na projekcie nie opartym na Astro, otrzymuje jasny komunikat
 - Kryteria akceptacji:
-    - Narzędzie wykrywa że projekt nie jest oparty na Astro
-    - Wyświetla komunikat: "This tool only supports Astro projects"
-    - Nie wykonuje dalszej analizy
-    - Zwraca kod błędu różny od 0
+  - Narzędzie wykrywa że projekt nie jest oparty na Astro
+  - Wyświetla komunikat: "This tool only supports Astro projects"
+  - Nie wykonuje dalszej analizy
+  - Zwraca kod błędu różny od 0
 
 ### US-004: Kopiowanie podsumowania do formularza
 
@@ -120,10 +120,10 @@ Narzędzie rozwiązuje te problemy poprzez automatyczną analizę projektu i gen
 - Tytuł: Jako kursant chcę łatwo skopiować podsumowanie do formularza zaliczeniowego
 - Opis: Raport zawiera specjalną sekcję sformatowaną do wklejenia w formularz zaliczeniowy
 - Kryteria akceptacji:
-    - Raport zawiera wydzieloną sekcję "Summary for submission form"
-    - Sekcja zawiera zwięzłe podsumowanie stanu projektu
-    - Format jest zgodny z wymaganiami formularza
-    - Tekst jest gotowy do skopiowania bez edycji
+  - Raport zawiera wydzieloną sekcję "Summary for submission form"
+  - Sekcja zawiera zwięzłe podsumowanie stanu projektu
+  - Format jest zgodny z wymaganiami formularza
+  - Tekst jest gotowy do skopiowania bez edycji
 
 ### US-005: Persystencja stanu projektu
 
@@ -131,11 +131,11 @@ Narzędzie rozwiązuje te problemy poprzez automatyczną analizę projektu i gen
 - Tytuł: Jako kursant chcę aby stan mojego projektu był zapisywany
 - Opis: Po każdym sprawdzeniu stan projektu jest zapisywany lokalnie
 - Kryteria akceptacji:
-    - Tworzony jest katalog .tracker/ w głównym katalogu projektu
-    - Stan zapisywany jest w pliku state.json
-    - Plik zawiera stan każdego kryterium (true/false)
-    - Plik zawiera datę ostatniego sprawdzenia w formacie ISO 8601
-    - Katalog .tracker/ jest automatycznie dodawany do .gitignore
+  - Tworzony jest katalog .tracker/ w głównym katalogu projektu
+  - Stan zapisywany jest w pliku state.json
+  - Plik zawiera stan każdego kryterium (true/false)
+  - Plik zawiera datę ostatniego sprawdzenia w formacie ISO 8601
+  - Katalog .tracker/ jest automatycznie dodawany do .gitignore
 
 ### US-006: Instalacja i konfiguracja
 
@@ -143,10 +143,10 @@ Narzędzie rozwiązuje te problemy poprzez automatyczną analizę projektu i gen
 - Tytuł: Jako kursant chcę łatwo zainstalować i skonfigurować narzędzie
 - Opis: Proces instalacji jest prosty i wymaga minimalnej konfiguracji
 - Kryteria akceptacji:
-    - Instalacja przez npm: npm install -g @przeprogramowani/mvp-tracker
-    - Narzędzie działa od razu po instalacji bez dodatkowej konfiguracji
-    - Dokumentacja instalacji jest dostępna w README
-    - Wsparcie dla Node.js 18+
+  - Instalacja przez npm: npm install -g @przeprogramowani/mvp-tracker
+  - Narzędzie działa od razu po instalacji bez dodatkowej konfiguracji
+  - Dokumentacja instalacji jest dostępna w README
+  - Wsparcie dla Node.js 18+
 
 ### US-007: Obsługa błędów analizy
 
@@ -154,10 +154,10 @@ Narzędzie rozwiązuje te problemy poprzez automatyczną analizę projektu i gen
 - Tytuł: Jako kursant chcę otrzymać pomocny komunikat gdy analiza się nie powiedzie
 - Opis: W przypadku błędów podczas analizy, otrzymuję jasny komunikat co poszło nie tak
 - Kryteria akceptacji:
-    - Błędy są wychwytywane i obsługiwane
-    - Komunikaty błędów są w języku angielskim
-    - Wskazują możliwe przyczyny problemu
-    - Sugerują rozwiązania (np. sprawdzenie połączenia z hostem AI)
+  - Błędy są wychwytywane i obsługiwane
+  - Komunikaty błędów są w języku angielskim
+  - Wskazują możliwe przyczyny problemu
+  - Sugerują rozwiązania (np. sprawdzenie połączenia z hostem AI)
 
 ## 6. Metryki sukcesu
 

@@ -1,14 +1,19 @@
 {
-  "name": "10x-mvp-tracker",
+  "name": "@przeprogramowani/10x-mvp-tracker",
   "version": "1.0.0",
+  "description": "MCP tool for tracking MVP project completion status. Analyzes Astro projects against 10 criteria and generates progress reports.",
   "directories": {
     "doc": "docs"
   },
   "type": "module",
   "main": "dist/index.js",
+  "bin": {
+    "10x-mvp-tracker": "./dist/index.js"
+  },
   "scripts": {
-    "build": "tsc",
-    "dev": "tsx watch src/index.ts",
+    "build": "tsc && chmod +x dist/index.js",
+    "dev": "npx fastmcp dev src/index.ts",
+    "inspect": "npx fastmcp inspect src/index.ts",
     "start": "node dist/index.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -16,12 +21,33 @@
     "format:check": "prettier --check .",
     "check": "npm run lint && npm run format:check && npm run build"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": [
+    "mcp",
+    "astro",
+    "mvp",
+    "tracker",
+    "fastmcp"
+  ],
+  "author": "Przeprogramowani",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/przeprogramowani/10x-mvp-tracker.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "dependencies": {
-    "fastmcp": "3.13.0"
+    "fastmcp": "3.13.0",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@types/node": "24.1.0",

@@ -4,7 +4,7 @@ import eslintPluginPrettier from "eslint-plugin-prettier/recommended";
 
 export default tseslint.config(
   {
-    ignores: ["dist/**", "node_modules/**", "*.config.js", "*.config.mjs"],
+    ignores: ["dist/**", "node_modules/**", "*.config.js", "*.config.mjs", "test-client.mjs"],
   },
   ...tseslint.configs.recommendedTypeChecked,
   {
