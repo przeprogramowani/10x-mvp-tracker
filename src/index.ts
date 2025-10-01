@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 import { FastMCP, UserError } from "fastmcp";
 import { z } from "zod";
-import * as fs from "fs/promises";
-import * as path from "path";
 import { getAnalysisPrompt } from "./analysis-prompt.js";
 
 // Create FastMCP instance
@@ -21,7 +19,7 @@ mcp.addTool({
     projectPath: z.string().optional().describe("Path to the project directory (defaults to current working directory)"),
   }),
   annotations: {
-    readOnlyHint: false, // Creates .tracker directory
+    readOnlyHint: true,
     destructiveHint: false, // Only creates/updates project state
     idempotentHint: false, // Results may change over time
     openWorldHint: true, // Analyzes arbitrary project structures
@@ -33,34 +31,6 @@ mcp.addTool({
       // Determine project directory
       const projectDir = args.projectPath || process.cwd();
       log.info(`Using project directory: ${projectDir}`);
-
-      log.info("Creating state directory...");
-
-      // Create state directory
-      const trackerDir = path.join(projectDir, ".tracker");
-      await fs.mkdir(trackerDir, { recursive: true });
-
-      // Manage .gitignore
-      const gitignorePath = path.join(projectDir, ".gitignore");
-      try {
-        const gitignore = await fs.readFile(gitignorePath, "utf-8");
-        if (!gitignore.includes(".tracker")) {
-          await fs.appendFile(gitignorePath, "\n.tracker/\n");
-        }
-      } catch {
-        await fs.writeFile(gitignorePath, ".tracker/\n");
-      }
-
-      // Save analysis state
-      const state = {
-        timestamp: new Date().toISOString(),
-        analyzed: true,
-      };
-
-      const statePath = path.join(trackerDir, "state.json");
-      await fs.writeFile(statePath, JSON.stringify(state, null, 2));
-
-      log.info("Analysis complete");
 
       // Return analysis instructions for the host AI
       return generateAnalysisInstructions(projectDir);
@@ -74,11 +44,7 @@ mcp.addTool({
 
 // Start server with stdio transport
 mcp.start({
-  transportType: "httpStream",
-  httpStream: {
-    port: 8080,
-    stateless: true,
-  },
+  transportType: "stdio",
 });
 
 // Helper function to generate analysis instructions

@@ -125,19 +125,7 @@ Narzędzie rozwiązuje te problemy poprzez automatyczną analizę projektu i gen
   - Format jest zgodny z wymaganiami formularza
   - Tekst jest gotowy do skopiowania bez edycji
 
-### US-005: Persystencja stanu projektu
-
-- ID: US-005
-- Tytuł: Jako kursant chcę aby stan mojego projektu był zapisywany
-- Opis: Po każdym sprawdzeniu stan projektu jest zapisywany lokalnie
-- Kryteria akceptacji:
-  - Tworzony jest katalog .tracker/ w głównym katalogu projektu
-  - Stan zapisywany jest w pliku state.json
-  - Plik zawiera stan każdego kryterium (true/false)
-  - Plik zawiera datę ostatniego sprawdzenia w formacie ISO 8601
-  - Katalog .tracker/ jest automatycznie dodawany do .gitignore
-
-### US-006: Instalacja i konfiguracja
+### US-005: Instalacja i konfiguracja
 
 - ID: US-006
 - Tytuł: Jako kursant chcę łatwo zainstalować i skonfigurować narzędzie
@@ -148,7 +136,7 @@ Narzędzie rozwiązuje te problemy poprzez automatyczną analizę projektu i gen
   - Dokumentacja instalacji jest dostępna w README
   - Wsparcie dla Node.js 18+
 
-### US-007: Obsługa błędów analizy
+### US-006: Obsługa błędów analizy
 
 - ID: US-007
 - Tytuł: Jako kursant chcę otrzymać pomocny komunikat gdy analiza się nie powiedzie
@@ -173,7 +161,7 @@ Narzędzie rozwiązuje te problemy poprzez automatyczną analizę projektu i gen
 ### 6.3 Metryki efektywności
 
 - Średni czas wykonania analizy (cel: <30 sekund)
-- Średnie zużycie tokenów na analizę (cel: <3000 tokenów)
+- Średnie zużycie tokenów na analizę (cel: <30 000 tokenów)
 - Procent udanych analiz vs błędy (cel: >95% sukcesu)
 
 ### 6.4 Metryki edukacyjne
