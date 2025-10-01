@@ -49,10 +49,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/przeprogramowani/10x-mvp-tracker.git"
-  },
+  "repository": "github:przeprogramowani/10x-mvp-tracker",
   "engines": {
     "node": ">=22"
   },
