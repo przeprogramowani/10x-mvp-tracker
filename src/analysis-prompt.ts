@@ -1,11 +1,7 @@
 export const getAnalysisPrompt = (projectDir: string, timestamp: string): string => {
   return `# MVP Project Analysis Report
-${getBaseKnowledgePrompt()}
----
 
 You are an expert in 10xDevs certification project analysis.
-
-Above '---' is your base knowledge.
 
 The next task that you will excel at is:
 
@@ -19,7 +15,7 @@ Please perform a comprehensive analysis of this project against the following cr
 
 1. **Documentation (README + PRD)**
    - Check for README.md in the project root
-   - Check for Product Requirements Document (PRD) in docs/, .ai/ or similar location
+   - Check for Product Requirements Document (PRD) prd.md (or similar name) in docs/, .ai/ or similar location
    - Both should have meaningful content describing the project
 
 2. **Login functionality**
@@ -32,32 +28,28 @@ Please perform a comprehensive analysis of this project against the following cr
    - Any testing framework is acceptable (Jest, Vitest, Playwright, etc.)
    - At least one meaningful test should exist
 
-4. **Business logic**
+4. **Data management**
+   - Check for data management (CRUD operations) or similar functionality
+   - Look for data management files (Supabase, Prisma, Drizzle, etc.)
+   - Check for data management files in src/pages/api/, server/, or similar
+
+5. **Business logic**
    - Look for application-specific logic beyond basic CRUD
    - Examples: calculations, workflows, data transformations, business rules
    - Should demonstrate the app's unique value proposition
 
-5. **CI/CD configuration**
+6. **CI/CD configuration**
    - IMPORTANT: Actively search for CI/CD files in hidden directories
    - Check for: .github/workflows/, .gitlab-ci.yml, netlify.toml, vercel.json, etc.
    - Use file listing tools to check these specific paths
 
-6. **Database setup**
-   - Look for database configuration or schema files
-   - Check for ORM setup (Supabase, Prisma, Drizzle, etc.) or SQL files
-   - Database connection configuration counts
-
-7. **API endpoints**
-   - Check for API routes (could be in src/pages/api/, server/, or similar)
-   - Look for REST or GraphQL endpoint implementations
-   - At least one functional API endpoint should exist
 
 ## Expected Output Format:
 
 After analyzing, provide:
 
 1. **Checklist** with clear ✅/❌ for each criterion
-2. **Project Status**: Calculate percentage (X/7 * 100)
+2. **Project Status**: Calculate percentage (X/6 * 100)
 3. **Priority Improvements**: List what's missing with specific actionable guidance
 4. **Summary for Submission Form**: A concise 2-3 sentence summary
 
