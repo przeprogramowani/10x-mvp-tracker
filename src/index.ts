@@ -10,7 +10,7 @@ const mcp = new FastMCP({
   name: "10x-mvp-tracker",
   version: "1.0.0",
   instructions:
-    "check-mvp is a MCP tool for tracking 10xDevs certification project completion status. Analyzes web projects against 7 criteria and generates progress reports. ",
+    "check-mvp is a MCP tool for tracking 10xDevs certification project completion status. Analyzes web projects against 6 criteria and generates progress reports. ",
 });
 
 // Define check-mvp tool with optional projectPath parameter
@@ -33,22 +33,6 @@ mcp.addTool({
       // Determine project directory
       const projectDir = args.projectPath || process.cwd();
       log.info(`Using project directory: ${projectDir}`);
-
-      // Check if Astro project
-      // const packageJsonPath = path.join(projectDir, "package.json");
-      // try {
-      //   // const pkg = JSON.parse(await fs.readFile(packageJsonPath, "utf-8")) as {
-      //   //   dependencies?: Record<string, string>;
-      //   //   devDependencies?: Record<string, string>;
-      //   // };
-      //   // const hasAstro = pkg.dependencies?.astro || pkg.devDependencies?.astro;
-      //   // if (!hasAstro) {
-      //   //   throw new UserError("This tool only supports Astro projects. Please run in an Astro project directory.");
-      //   // }
-      // } catch (error) {
-      //   if (error instanceof UserError) throw error;
-      //   return `❌ This tool only supports Astro projects\n\nNo package.json found in directory: ${projectDir}`;
-      // }
 
       log.info("Creating state directory...");
 
@@ -90,7 +74,11 @@ mcp.addTool({
 
 // Start server with stdio transport
 mcp.start({
-  transportType: "stdio",
+  transportType: "httpStream",
+  httpStream: {
+    port: 8080,
+    stateless: true,
+  },
 });
 
 // Helper function to generate analysis instructions
