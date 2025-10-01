@@ -1,27 +1,110 @@
 # 10x MVP Tracker
 
-MCP (Model Context Protocol) tool for helping programming course students monitor their MVP web application project progress. It integrates with AI tools (Claude Code, Gemini CLI, Cursor, Windsurf) and is distributed as an NPM package.
+10xMVP Tracker is a MCP (Model Context Protocol) server for helping [10xDevs.pl](https://10xdevs.pl) students monitor their MVP web application project progress. It integrates with AI tools and is distributed as an NPM package.
 
 ## Features
 
-- ✅ Analyzes Astro projects against 7 predefined criteria
+- ✅ Analyzes projects against 7 predefined criteria
 - 📊 Generates progress reports with completion percentage
 - 💡 Provides prioritized improvement recommendations
 - 📝 Creates ready-to-copy submission summaries
-- 🔄 Maintains state tracking in `.tracker/` directory
-- 🚀 Zero configuration required
 
-## Installation
+## Quick Start
 
-### As an NPM Package
+1.  **Install MCP server in your AI tool**
 
-```bash
-npm install -g @przeprogramowani/10x-mvp-tracker
+👉 Guidelines for most popular AI Tools below
+
+2.  **Ask your AI assistant:**
+
+    > "Please report status of my project with check-mvp tool"
+
+We recommend using `grok-code-fast-1` model with this tool for best results (price to quality ratio).
+
+## Installation & Setup
+
+- [Cursor IDE](#cursor-ide)
+- [Claude Code](#claude-code)
+- [Jetbrains AI Assistant](#jetbrains-ai-assistant)
+- [GitHub Copilot](#github-copilot)
+- [Windsurf](#windsurf)
+
+### Cursor IDE
+
+Add the following configuration to your `.cursor/mcp.json` file:
+
+```json
+{
+  "mcpServers": {
+    "10x-mvp-tracker": {
+      "command": "npx",
+      "args": ["@przeprogramowani/10x-mvp-tracker"],
+      "transport": "stdio"
+    }
+  }
+}
 ```
 
-### For Claude Desktop
+You can also use "New MCP Server" button in Cursor Settings > Tools & MCP.
 
-Add to your Claude Desktop configuration (`claude_desktop_config.json`):
+### Claude Code
+
+**Run the following command in your project directory**:
+
+```
+claude mcp add 10x-mvp-tracker npx '@przeprogramowani/10x-mvp-tracker'
+```
+
+You can alternatively create `.mcp.json` file in your project directory with the following content:
+
+```json
+{
+  "mcpServers": {
+    "10x-mvp-tracker": {
+      "command": "npx",
+      "args": ["@przeprogramowani/10x-mvp-tracker"],
+      "transport": "stdio"
+    }
+  }
+}
+```
+
+### Jetbrains AI Assistant
+
+Go to Settings | Tools | AI Assistant | Model Context Protocol (MCP) and add following "as JSON" configuration:
+
+```json
+{
+  "mcpServers": {
+    "10x-mvp-tracker": {
+      "command": "npx",
+      "args": ["@przeprogramowani/10x-mvp-tracker"]
+    }
+  }
+}
+```
+
+For working directory, add path to project root.
+
+### GitHub Copilot
+
+Create a `.vscode/mcp.json` file in the root of your project with the following content:
+
+```json
+{
+  "mcpServers": {
+    "10x-mvp-tracker": {
+      "command": "npx",
+      "args": ["@przeprogramowani/10x-mvp-tracker"],
+      "transport": "stdio"
+    }
+  }
+}
+```
+
+### Windsurf
+
+Create an `mcp_config.json` file in your project's root directory and add the following configuration:
 
 ```json
 {
@@ -37,24 +120,13 @@ Add to your Claude Desktop configuration (`claude_desktop_config.json`):
 
 ## Usage
 
-### In Claude Desktop
+Once installed and configured, you can invoke the tool by asking your AI assistant:
 
-Once configured, you can ask Claude:
-
-```
-Please run check-mvp to analyze my project
-```
-
-### Command Line
-
-```bash
-# In your Astro project directory
-10x-mvp-tracker
-```
+> "Please report status of my project with check-mvp tool"
 
 ## Analysis Criteria
 
-The tool checks your Astro project against these 7 criteria:
+The tool checks your project against these 7 criteria:
 
 1. **Documentation** - README + Product Requirements Document (PRD)
 2. **Login functionality** - Authentication implementation
@@ -73,35 +145,6 @@ The tool generates a structured Markdown report that includes:
 - Priority improvements section
 - Ready-to-copy submission summary
 - Generation timestamp
-
-## State Management
-
-- Creates `.tracker/state.json` to persist analysis state
-- Automatically adds `.tracker/` to `.gitignore`
-- Delete `.tracker/` directory to reset analysis state
-
-## Requirements
-
-- Node.js >= 18.0.0
-- Astro-based project (checks `package.json` for Astro dependency)
-
-## Troubleshooting
-
-### "This tool only supports Astro projects"
-
-- Verify your `package.json` contains Astro in dependencies or devDependencies
-- Ensure you're running the command in the correct project directory
-
-### Permission Errors
-
-- Check write permissions for `.tracker/` directory creation
-- Verify `.gitignore` is writable or can be created
-
-### Tool Not Found
-
-- Confirm NPM package installation: `npm list -g @przeprogramowani/10x-mvp-tracker`
-- Verify Claude Desktop MCP configuration
-- Restart Claude Desktop after configuration changes
 
 ## Development
 
@@ -132,7 +175,7 @@ npm run build
 ### Running Tests
 
 ```bash
-npm run check  # Runs lint, format check, and build
+npm run check  # Runs lint and format check
 ```
 
 ## Contributing

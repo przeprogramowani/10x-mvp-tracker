@@ -39,11 +39,6 @@ Narzędzie rozwiązuje te problemy poprzez automatyczną analizę projektu i gen
   - Sekcję do skopiowania do formularza zaliczeniowego
   - Informację o przybliżonym zużyciu tokenów
 
-### 3.3 Persystencja
-
-- Lokalny katalog .tracker/ w repozytorium projektu
-- Plik state.json z aktualnym stanem kryteriów (boolean) i datą ostatniego sprawdzenia
-
 ### 3.4 Integracja
 
 - Komunikacja przez protokół MCP (transport stdio)
