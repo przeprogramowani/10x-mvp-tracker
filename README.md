@@ -31,6 +31,8 @@ We recommend using `grok-code-fast-1` model with this tool for best results (pri
 
 ### Cursor IDE
 
+[🚀 Click here to one-click install](cursor://anysphere.cursor-deeplink/mcp/install?name=10x-mvp-tracker&config=eyJ0cmFuc3BvcnQiOiJzdGRpbyIsImNvbW1hbmQiOiJucHggQHByemVwcm9ncmFtb3dhbmkvMTB4LW12cC10cmFja2VyIn0%3D)
+
 Add the following configuration to your `.cursor/mcp.json` file:
 
 ```json
