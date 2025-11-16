@@ -6,7 +6,7 @@ import { getAnalysisPrompt } from "./analysis-prompt.js";
 // Create FastMCP instance
 const mcp = new FastMCP({
   name: "10x-mvp-tracker",
-  version: "1.0.0",
+  version: "1.1.0",
   instructions:
     "check-mvp is a MCP tool for tracking 10xDevs certification project completion status. Analyzes web projects against 6 criteria and generates progress reports. ",
 });

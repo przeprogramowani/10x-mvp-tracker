@@ -35,7 +35,22 @@
       "master"
     ],
     "plugins": [
-      "@semantic-release/commit-analyzer",
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "releaseRules": [
+            {
+              "type": "docs",
+              "release": "patch"
+            },
+            {
+              "type": "chore",
+              "scope": "deps",
+              "release": "patch"
+            }
+          ]
+        }
+      ],
       "@semantic-release/release-notes-generator",
       "@semantic-release/npm",
       "@semantic-release/github"
@@ -54,7 +69,7 @@
     "node": ">=22"
   },
   "dependencies": {
-    "fastmcp": "3.13.0",
+    "fastmcp": "3.23.0",
     "zod": "^3.24.1"
   },
   "devDependencies": {
