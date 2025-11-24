@@ -31,7 +31,7 @@ We recommend using `grok-code-fast-1` model with this tool for best results (pri
 
 ### Cursor IDE
 
-[![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/install-mcp?name=10x-mvp-tracker&config=eyJ0cmFuc3BvcnQiOiJzdGRpbyIsImNvbW1hbmQiOiJucHggQHByemVwcm9ncmFtb3dhbmkvMTB4LW12cC10cmFja2VyIn0%3D)
+[![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](cursor://anysphere.cursor-deeplink/mcp/install?name=10x-mvp-tracker&config=eyJ0cmFuc3BvcnQiOiJzdGRpbyIsImNvbW1hbmQiOiJucHggQHByemVwcm9ncmFtb3dhbmkvMTB4LW12cC10cmFja2VyIn0%3D)
 
 Add the following configuration to your `.cursor/mcp.json` file:
 
