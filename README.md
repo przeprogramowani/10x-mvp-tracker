@@ -40,7 +40,7 @@ Add the following configuration to your `.cursor/mcp.json` file:
   "mcpServers": {
     "10x-mvp-tracker": {
       "command": "npx",
-      "args": ["@przeprogramowani/10x-mvp-tracker"],
+      "args": ["-y", "@przeprogramowani/10x-mvp-tracker@latest"],
       "transport": "stdio"
     }
   }
@@ -54,7 +54,7 @@ You can also use "New MCP Server" button in Cursor Settings > Tools & MCP.
 **Run the following command in your project directory**:
 
 ```
-claude mcp add 10x-mvp-tracker npx '@przeprogramowani/10x-mvp-tracker'
+claude mcp add 10x-mvp-tracker npx '-y' '@przeprogramowani/10x-mvp-tracker@latest'
 ```
 
 You can alternatively create `.mcp.json` file in your project directory with the following content:
@@ -64,7 +64,7 @@ You can alternatively create `.mcp.json` file in your project directory with the
   "mcpServers": {
     "10x-mvp-tracker": {
       "command": "npx",
-      "args": ["@przeprogramowani/10x-mvp-tracker"],
+      "args": ["-y", "@przeprogramowani/10x-mvp-tracker@latest"],
       "transport": "stdio"
     }
   }
@@ -80,7 +80,7 @@ Go to Settings | Tools | AI Assistant | Model Context Protocol (MCP) and add fol
   "mcpServers": {
     "10x-mvp-tracker": {
       "command": "npx",
-      "args": ["@przeprogramowani/10x-mvp-tracker"]
+      "args": ["-y", "@przeprogramowani/10x-mvp-tracker@latest"]
     }
   }
 }
@@ -97,7 +97,7 @@ Create a `.vscode/mcp.json` file in the root of your project with the following 
   "mcpServers": {
     "10x-mvp-tracker": {
       "command": "npx",
-      "args": ["@przeprogramowani/10x-mvp-tracker"],
+      "args": ["-y", "@przeprogramowani/10x-mvp-tracker@latest"],
       "transport": "stdio"
     }
   }
