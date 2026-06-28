@@ -8,7 +8,7 @@ const mcp = new FastMCP({
   name: "10x-mvp-tracker",
   version: "1.1.0",
   instructions:
-    "check-mvp is a MCP tool for tracking 10xDevs certification project completion status. Analyzes web projects against 6 criteria and generates progress reports. ",
+    "check-mvp is a MCP tool for tracking 10xDevs certification project completion status. Analyzes projects against 5 criteria (CRUD, business logic, tests, authentication, documentation) and generates progress reports. ",
 });
 
 // Define check-mvp tool with optional projectPath parameter
